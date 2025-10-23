@@ -18,7 +18,7 @@ class Gym extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 100),
+              padding: const EdgeInsets.only(left: 21, top: 100),
               child: Text(
                 "HELLO\nSign in!",
                 style: GoogleFonts.poppins(
