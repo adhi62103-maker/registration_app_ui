@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gym1/Account.dart';
+import 'package:gym1/Gym.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -44,7 +46,10 @@ class Welcome extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   foregroundColor: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: () {Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>Account ()),
+                );},
                 child: Text(
                   "SIGN IN",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
@@ -59,7 +64,10 @@ class Welcome extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   side: BorderSide(color: Colors.white),
                 ),
-                onPressed: () {},
+                onPressed: () {Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>Gym ()),
+                );},
                 child: Text(
                   "SIGN UP",
                   style: TextStyle(
