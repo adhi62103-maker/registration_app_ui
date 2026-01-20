@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gym1/forgot_password.dart';
 import 'package:gym1/service.dart';
 
-class Gym extends StatefulWidget {
-  const Gym({super.key});
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({super.key});
 
   @override
-  State<Gym> createState() => _GymState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _GymState extends State<Gym> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   TextEditingController emailcontroller = TextEditingController();
-  TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +27,7 @@ class _GymState extends State<Gym> {
             Padding(
               padding: const EdgeInsets.only(left: 21, top: 100),
               child: Text(
-                "HELLO\nSign in!",
+                "Forgot Password",
                 style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -39,7 +37,7 @@ class _GymState extends State<Gym> {
             ),
             SizedBox(height: 50),
             Container(
-              height: 720,
+              height: 750,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -69,54 +67,14 @@ class _GymState extends State<Gym> {
                         suffixIcon: Icon(Icons.account_circle_outlined),
                       ),
                     ),
-                    SizedBox(height: 30),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 300),
-                      child: Text(
-                        "Password",
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    TextField(
-                      controller: passwordcontroller,
-                      decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.visibility_off_outlined),
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 200),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ForgotPassword(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Forgot password?",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 90),
+                    SizedBox(height: 50),
                     SizedBox(
                       height: 60,
                       width: 350,
                       child: GestureDetector(
                         onTap: () {
-                          signin(
+                          forgotpassword(
                             email: emailcontroller.text,
-                            password: passwordcontroller.text,
                             context: context,
                           );
                         },
@@ -129,33 +87,13 @@ class _GymState extends State<Gym> {
                           ),
                           child: Center(
                             child: Text(
-                              "SIGN IN",
+                              "Continue",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 200),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 200),
-                      child: Text("don't have account?"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 280),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text(
-                          "Sign up",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
                           ),
                         ),
                       ),
